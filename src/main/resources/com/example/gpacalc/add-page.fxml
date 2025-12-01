@@ -39,9 +39,7 @@
 
             <Button fx:id="addButton" onAction="#onAddButtonClick" prefHeight="30.0" prefWidth="216.0" text="Add Course" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-            <Button fx:id="addMoreButton" onAction="#onAddMoreClick" mnemonicParsing="false" prefHeight="30.0" prefWidth="216.0" text="add more course" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-
-            <Button fx:id="calculateButton" onAction="#onCalculateGpaClick" mnemonicParsing="false" prefHeight="30.0" prefWidth="216.0" text="calculate gpa" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#onCalculateGpaClick" prefHeight="30.0" prefWidth="216.0" text="calculate gpa" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 
             <columnConstraints>
                 <ColumnConstraints />

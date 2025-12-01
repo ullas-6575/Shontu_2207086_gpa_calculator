@@ -30,7 +30,7 @@ public class database {
                 CREATE TABLE IF NOT EXISTS Courses (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     course_name TEXT NOT NULL,
-                    credit INTEGER NOT NULL,
+                    credit REAL NOT NULL,
                     grade TEXT NOT NULL
                 );
                 """;
@@ -39,21 +39,19 @@ public class database {
              Statement stmt = conn.createStatement()) {
 
             stmt.execute(sql);
-//            System.out.println("Database initialized.");
-
         } catch (SQLException e) {
             System.out.println("Initialization failed!");
             e.printStackTrace();
         }
     }
-    public void insertCourse(String name, int credit, String grade) {
+    public static void insertCourse(String name, double credit, String grade) {
         String sql = "INSERT INTO Courses(course_name, credit, grade) VALUES(?, ?, ?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, name);
-            pstmt.setInt(2, credit);
+            pstmt.setDouble(2, credit);
             pstmt.setString(3, grade);
 
             pstmt.executeUpdate();
